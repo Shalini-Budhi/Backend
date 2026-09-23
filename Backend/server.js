@@ -4,12 +4,22 @@ const app = express();
 
 const PORT = 7000;
 
+app.use(express.json());
+
+
+const studentsRoutes = require("./src/routes/studentsRoutes");
+
+
+
 // Day-2
 app.get("/", (req, res) => {
   res.json({
     message: "Backend is running",
   });
 });
+
+
+app.use("/api/studentsRoutes",studentsRoutes);
 
 // // Day-3
 
@@ -150,6 +160,9 @@ app.get("/", (req, res) => {
 // });
 
 // Day-1
+
+
+
 app.listen(PORT, () => {
   console.log(`server is running on port ${PORT}`);
 });
