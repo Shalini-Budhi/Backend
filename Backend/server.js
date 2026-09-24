@@ -4,6 +4,7 @@ const app = express();
 
 const PORT = 7000;
 
+//middleware
 app.use(express.json());
 
 
@@ -19,7 +20,7 @@ app.get("/", (req, res) => {
 });
 
 
-app.use("/api/studentsRoutes",studentsRoutes);
+app.use("/api/studentsRoute",studentsRoutes);
 
 // // Day-3
 

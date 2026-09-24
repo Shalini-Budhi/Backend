@@ -1,3 +1,4 @@
+const studentsData = require("../data/studentsData");
 const students  = require("../data/studentsData");
 
 
@@ -29,7 +30,25 @@ const getStudentsById = (req,res) =>{
 };
 
 
+//Post Api 
+
+const createStudents = (req,res) => {
+ const newStudent = {
+  id: students.length+1,
+  ...req.body
+ };
+
+ students.push(newStudent);
+
+ res.status(201).json({
+  message:"Created Student data Successfully",
+  data:newStudent
+ });
+
+};
+
 module.exports = {
   getStudents,
-  getStudentsById
+  getStudentsById,
+  createStudents
 };

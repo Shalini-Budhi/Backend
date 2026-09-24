@@ -4,10 +4,18 @@ const router = express.Router();
 
 const {
   getStudents,
-  getStudentsById
+  getStudentsById,
+  createStudents
 } = require("../controllers/studentsController");
 
+//Get All Student
 router.get("/", getStudents);
-router.get("/:id",getStudentsById)
+
+//Get Sudent Bt Id
+router.get("/:id",getStudentsById);
+
+//Post Api
+
+router.post("/",createStudents);
 
 module.exports = router;
